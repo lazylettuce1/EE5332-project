@@ -1,0 +1,6 @@
+build/
+bak/
+__pycache__
+*.bit
+*.hwh
+
