@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="matVecMul.cpp" path="/home/aion/my_ws/ee5332/matmul/matVecMul.cpp"/>
+    <originFiles name="matVecMul.h" path="/home/aion/my_ws/ee5332/matmul/matVecMul.h"/>
+  </source>
+  <testbench>
+    <originFiles name="tb.cpp" path="/home/aion/my_ws/ee5332/matmul/tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

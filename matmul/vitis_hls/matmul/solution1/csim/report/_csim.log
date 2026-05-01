@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../tb.cpp in debug mode
+   Compiling ../../../../../matVecMul.cpp in debug mode
+   Generating csim.exe
+make: Warning: File '/dev/null' has modification time 11891 s in the future
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: /lib/x86_64-linux-gnu/libm.so.6: don't know how to handle section `.relr.dyn' [0x      13]
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: skipping incompatible /lib/x86_64-linux-gnu/libm.so.6 when searching for /lib/x86_64-linux-gnu/libm.so.6
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: cannot find /lib/x86_64-linux-gnu/libm.so.6
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: /lib/x86_64-linux-gnu/libmvec.so.1: don't know how to handle section `.relr.dyn' [0x      13]
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: skipping incompatible /lib/x86_64-linux-gnu/libmvec.so.1 when searching for /lib/x86_64-linux-gnu/libmvec.so.1
+/mnt/xilinx/Vivado/2021.1/tps/lnx64/binutils-2.26/bin/ld: cannot find /lib/x86_64-linux-gnu/libmvec.so.1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile.rules:393: csim.exe] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************
