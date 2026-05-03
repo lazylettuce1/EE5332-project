@@ -1,27 +1,6 @@
 #include "matVecMul.h"
 
-/* -------- BASELINE ---------- */
-void matVecMul (
-    data_t A[MAX_N][MAX_N], 
-    data_t x[MAX_N],
-    data_t y[MAX_N], 
-    int row_size, int col_size
-)
-{
-    for (int i=0; i < row_size; i++) {
-        // now we have to do vector multiplication,
-        float acc = 0;
-        for (int j=0; j < col_size; j++){
-            acc += (float)A[i][j] * (float)x[j];
-        }
-
-        y[i] = (data_t) acc;
-    }
-}
-
-
-/* ---------- Streaming MatMul --------- */
-void matmul_stream(
+void matVecMul(
     data_t A[MAX_N][MAX_N],
     hls::stream<axis_pkt_t> &in_stream,
     hls::stream<axis_pkt_t> &out_stream,
@@ -44,6 +23,8 @@ void matmul_stream(
     // samples the stream data coming in,
     sample_loop:
     for (int i=0; i<col_size; i++) {
+#pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=64 max=64
         /* Read input sample */
         axis_pkt_t in_pkt = in_stream.read();
         x_localbuff[i] = unpack(in_pkt.data);
@@ -51,10 +32,14 @@ void matmul_stream(
 
     matmul_outer_loop:
     for (int i=0; i < row_size; i++) {
+#pragma HLS LOOP_TRIPCOUNT min=64 max=64
         // now we have to do vector multiplication,
         acc_t acc = 0;
         matmul_inner_loop:
         for (int j=0; j < col_size; j++){
+// #pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=64 max=64
+#pragma HLS UNROLL
             acc += A[i][j] * x_localbuff[j];
         }
 
@@ -70,6 +55,5 @@ void matmul_stream(
 
         out_stream.write(out_pkt);
     }
-
 
 }

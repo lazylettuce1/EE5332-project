@@ -1,0 +1,952 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 18 36 577 806
+%%Title: Enscript Output
+%%Creator: GNU Enscript 1.6.5.90
+%%CreationDate: Mon May  4 03:07:23 2026
+%%Orientation: Landscape
+%%Pages: (atend)
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6.5 90
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6.5 90
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 7 7 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [595 842] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-simple 1.6.5 90
+
+/do_header {	% print default simple header
+  gsave
+    d_header_x d_header_y HFpt_h 3 div add translate
+
+    HF setfont
+    user_header_p {
+      5 0 moveto user_header_left_str show
+
+      d_header_w user_header_center_str stringwidth pop sub 2 div
+      0 moveto user_header_center_str show
+
+      d_header_w user_header_right_str stringwidth pop sub 5 sub
+      0 moveto user_header_right_str show
+    } {
+      5 0 moveto fname show
+      45 0 rmoveto fmodstr show
+      45 0 rmoveto pagenumstr show
+    } ifelse
+
+  grestore
+} def
+%%EndResource
+/d_page_w 770 def
+/d_page_h 559 def
+/d_header_x 0 def
+/d_header_y 544 def
+/d_header_w 770 def
+/d_header_h 15 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 770 def
+/d_footer_h 0 def
+/d_output_w 770 def
+/d_output_h 544 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+90 rotate
+36 -577 translate
+/pagenum 1 def
+/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/ftail (matVecMul_csynth.rpt) def
+% User defined strings:
+/fmodstr (Mon May 04 03:06:58 2026) def
+/pagenumstr (1) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 518 M
+(================================================================) s
+5 510 M
+(== Vitis HLS Report for 'matVecMul') s
+5 502 M
+(================================================================) s
+5 494 M
+(* Date:           Mon May  4 03:06:58 2026) s
+5 478 M
+(* Version:        2021.1 \(Build 3247384 on Thu Jun 10 19:36:07 MDT 2021\)) s
+5 470 M
+(* Project:        matVecMul_stream_prj) s
+5 462 M
+(* Solution:       solution3 \(Vivado IP Flow Target\)) s
+5 454 M
+(* Product family: zynq) s
+5 446 M
+(* Target device:  xc7z020-clg400-1) s
+5 422 M
+(================================================================) s
+5 414 M
+(== Performance Estimates) s
+5 406 M
+(================================================================) s
+5 398 M
+(+ Timing: ) s
+5 390 M
+(    * Summary: ) s
+5 382 M
+(    +--------+----------+----------+------------+) s
+5 374 M
+(    |  Clock |  Target  | Estimated| Uncertainty|) s
+5 366 M
+(    +--------+----------+----------+------------+) s
+5 358 M
+(    |ap_clk  |  10.00 ns|  5.831 ns|     2.70 ns|) s
+5 350 M
+(    +--------+----------+----------+------------+) s
+5 334 M
+(+ Latency: ) s
+5 326 M
+(    * Summary: ) s
+5 318 M
+(    +---------+---------+----------+----------+-------+-------+---------+) s
+5 310 M
+(    |  Latency \(cycles\) |  Latency \(absolute\) |    Interval   | Pipeline|) s
+5 302 M
+(    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |) s
+5 294 M
+(    +---------+---------+----------+----------+-------+-------+---------+) s
+5 286 M
+(    |    20742|    20742|  0.207 ms|  0.207 ms|  20743|  20743|       no|) s
+5 278 M
+(    +---------+---------+----------+----------+-------+-------+---------+) s
+5 262 M
+(    + Detail: ) s
+5 254 M
+(        * Instance: ) s
+5 246 M
+(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
+5 238 M
+(        |                                           |                                |  Latency \(cycles\) |  Latency \(absolute\) |  Interval | Pipeline|) s
+5 230 M
+(        |                  Instance                 |             Module             |   min   |   max   |    min   |    max   | min | max |   Type  |) s
+5 222 M
+(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
+5 214 M
+(        |grp_matVecMul_Pipeline_sample_loop_fu_261  |matVecMul_Pipeline_sample_loop  |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|) s
+5 206 M
+(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
+5 190 M
+(        * Loop: ) s
+5 182 M
+(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
+5 174 M
+(        |                      |  Latency \(cycles\) | Iteration|  Initiation Interval  | Trip |          |) s
+5 166 M
+(        |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|) s
+5 158 M
+(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
+5 150 M
+(        |- matmul_outer_loop   |    20672|    20672|       323|          -|          -|    64|        no|) s
+5 142 M
+(        | + matmul_inner_loop  |      320|      320|         5|          -|          -|    64|        no|) s
+5 134 M
+(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
+5 102 M
+(================================================================) s
+5 94 M
+(== Utilization Estimates) s
+5 86 M
+(================================================================) s
+5 78 M
+(* Summary: ) s
+5 70 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 62 M
+(|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|) s
+5 54 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 46 M
+(|DSP              |        -|    1|       -|      -|    -|) s
+5 38 M
+(|Expression       |        -|    -|       0|    460|    -|) s
+5 30 M
+(|FIFO             |        -|    -|       -|      -|    -|) s
+5 22 M
+(|Instance         |        4|    -|     201|    310|    -|) s
+5 14 M
+(|Memory           |        1|    -|       0|      0|    0|) s
+5 6 M
+(|Multiplexer      |        -|    -|       -|    147|    -|) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+90 rotate
+36 -577 translate
+/pagenum 2 def
+/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/ftail (matVecMul_csynth.rpt) def
+% User defined strings:
+/fmodstr (Mon May 04 03:06:58 2026) def
+/pagenumstr (2) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 534 M
+(|Register         |        -|    -|     230|      -|    -|) s
+5 526 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 518 M
+(|Total            |        5|    1|     431|    917|    0|) s
+5 510 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 502 M
+(|Available        |      280|  220|  106400|  53200|    0|) s
+5 494 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 486 M
+(|Utilization \(%\)  |        1|   ~0|      ~0|      1|    0|) s
+5 478 M
+(+-----------------+---------+-----+--------+-------+-----+) s
+5 462 M
+(+ Detail: ) s
+5 454 M
+(    * Instance: ) s
+5 446 M
+(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+5 438 M
+(    |                  Instance                 |             Module             | BRAM_18K| DSP|  FF | LUT | URAM|) s
+5 430 M
+(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+5 422 M
+(    |control_s_axi_U                            |control_s_axi                   |        4|   0|  192|  238|    0|) s
+5 414 M
+(    |grp_matVecMul_Pipeline_sample_loop_fu_261  |matVecMul_Pipeline_sample_loop  |        0|   0|    9|   72|    0|) s
+5 406 M
+(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+5 398 M
+(    |Total                                      |                                |        4|   0|  201|  310|    0|) s
+5 390 M
+(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+5 374 M
+(    * DSP: ) s
+5 366 M
+(    +----------------------------+------------------------+-----------+) s
+5 358 M
+(    |          Instance          |         Module         | Expression|) s
+5 350 M
+(    +----------------------------+------------------------+-----------+) s
+5 342 M
+(    |mul_mul_16s_16s_32_4_1_U10  |mul_mul_16s_16s_32_4_1  |    i0 * i1|) s
+5 334 M
+(    +----------------------------+------------------------+-----------+) s
+5 318 M
+(    * Memory: ) s
+5 310 M
+(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
+5 302 M
+(    |      Memory     |     Module    | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|) s
+5 294 M
+(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
+5 286 M
+(    |x_localbuff_V_U  |x_localbuff_V  |        1|  0|   0|    0|    64|   16|     1|         1024|) s
+5 278 M
+(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
+5 270 M
+(    |Total            |               |        1|  0|   0|    0|    64|   16|     1|         1024|) s
+5 262 M
+(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
+5 246 M
+(    * FIFO: ) s
+5 238 M
+(    N/A) s
+5 222 M
+(    * Expression: ) s
+5 214 M
+(    +-------------------------------+----------+----+---+----+------------+------------+) s
+5 206 M
+(    |         Variable Name         | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|) s
+5 198 M
+(    +-------------------------------+----------+----+---+----+------------+------------+) s
+5 190 M
+(    |acc_V_4_fu_642_p2              |         +|   0|  0|  45|          38|          38|) s
+5 182 M
+(    |add_ln1169_fu_350_p2           |         +|   0|  0|  14|          13|          13|) s
+5 174 M
+(    |add_ln34_fu_300_p2             |         +|   0|  0|  39|          32|           1|) s
+5 166 M
+(    |add_ln39_fu_332_p2             |         +|   0|  0|  14|           7|           1|) s
+5 158 M
+(    |p_Val2_1_fu_420_p2             |         +|   0|  0|  23|          16|          16|) s
+5 150 M
+(    |ret_V_fu_628_p2                |         +|   0|  0|  46|          39|          39|) s
+5 142 M
+(    |sub_fu_287_p2                  |         +|   0|  0|  39|          32|           2|) s
+5 134 M
+(    |and_ln789_fu_506_p2            |       and|   0|  0|   2|           1|           1|) s
+5 126 M
+(    |and_ln790_fu_520_p2            |       and|   0|  0|   2|           1|           1|) s
+5 118 M
+(    |and_ln795_fu_550_p2            |       and|   0|  0|   2|           1|           1|) s
+5 110 M
+(    |ap_block_state6                |       and|   0|  0|   2|           1|           1|) s
+5 102 M
+(    |carry_1_fu_440_p2              |       and|   0|  0|   2|           1|           1|) s
+5 94 M
+(    |overflow_1_fu_544_p2           |       and|   0|  0|   2|           1|           1|) s
+5 86 M
+(    |overflow_fu_662_p2             |       and|   0|  0|   2|           1|           1|) s
+5 78 M
+(    |underflow_fu_568_p2            |       and|   0|  0|   2|           1|           1|) s
+5 70 M
+(    |Range1_all_ones_fu_472_p2      |      icmp|   0|  0|  12|          14|           2|) s
+5 62 M
+(    |Range1_all_zeros_fu_478_p2     |      icmp|   0|  0|  12|          14|           1|) s
+5 54 M
+(    |Range2_all_ones_fu_456_p2      |      icmp|   0|  0|  12|          13|           2|) s
+5 46 M
+(    |icmp_ln34_fu_295_p2            |      icmp|   0|  0|  18|          32|          32|) s
+5 38 M
+(    |icmp_ln39_fu_327_p2            |      icmp|   0|  0|  18|          32|          32|) s
+5 30 M
+(    |out_stream_TLAST_int_regslice  |      icmp|   0|  0|  18|          32|          32|) s
+5 22 M
+(    |or_ln384_fu_582_p2             |        or|   0|  0|   2|           1|           1|) s
+5 14 M
+(    |or_ln794_fu_532_p2             |        or|   0|  0|   2|           1|           1|) s
+5 6 M
+(    |or_ln795_fu_556_p2             |        or|   0|  0|   2|           1|           1|) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+90 rotate
+36 -577 translate
+/pagenum 3 def
+/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/ftail (matVecMul_csynth.rpt) def
+% User defined strings:
+/fmodstr (Mon May 04 03:06:58 2026) def
+/pagenumstr (3) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 534 M
+(    |acc_V_fu_682_p3                |    select|   0|  0|  38|           1|          38|) s
+5 526 M
+(    |deleted_ones_fu_512_p3         |    select|   0|  0|   2|           1|           1|) s
+5 518 M
+(    |deleted_zeros_fu_484_p3        |    select|   0|  0|   2|           1|           1|) s
+5 510 M
+(    |select_ln384_1_fu_574_p3       |    select|   0|  0|  17|           1|          15|) s
+5 502 M
+(    |select_ln384_fu_674_p3         |    select|   0|  0|  39|           1|          37|) s
+5 494 M
+(    |val_V_fu_588_p3                |    select|   0|  0|  16|           1|          16|) s
+5 486 M
+(    |xor_ln340_fu_668_p2            |       xor|   0|  0|   2|           1|           1|) s
+5 478 M
+(    |xor_ln416_fu_434_p2            |       xor|   0|  0|   2|           1|           2|) s
+5 470 M
+(    |xor_ln789_fu_500_p2            |       xor|   0|  0|   2|           1|           2|) s
+5 462 M
+(    |xor_ln794_1_fu_526_p2          |       xor|   0|  0|   2|           1|           2|) s
+5 454 M
+(    |xor_ln794_2_fu_538_p2          |       xor|   0|  0|   2|           1|           2|) s
+5 446 M
+(    |xor_ln794_fu_656_p2            |       xor|   0|  0|   2|           1|           2|) s
+5 438 M
+(    |xor_ln795_fu_562_p2            |       xor|   0|  0|   2|           1|           2|) s
+5 430 M
+(    +-------------------------------+----------+----+---+----+------------+------------+) s
+5 422 M
+(    |Total                          |          |   0|  0| 460|         338|         343|) s
+5 414 M
+(    +-------------------------------+----------+----+---+----+------------+------------+) s
+5 398 M
+(    * Multiplexer: ) s
+5 390 M
+(    +-------------------------------+----+-----------+-----+-----------+) s
+5 382 M
+(    |              Name             | LUT| Input Size| Bits| Total Bits|) s
+5 374 M
+(    +-------------------------------+----+-----------+-----+-----------+) s
+5 366 M
+(    |acc_V_3_reg_249                |   9|          2|   38|         76|) s
+5 358 M
+(    |ap_NS_fsm                      |  65|         12|    1|         12|) s
+5 350 M
+(    |i_1_fu_166                     |   9|          2|   32|         64|) s
+5 342 M
+(    |in_stream_TREADY_int_regslice  |   9|          2|    1|          2|) s
+5 334 M
+(    |j_reg_238                      |   9|          2|    7|         14|) s
+5 326 M
+(    |out_stream_TDATA_blk_n         |   9|          2|    1|          2|) s
+5 318 M
+(    |x_localbuff_V_address0         |  14|          3|    6|         18|) s
+5 310 M
+(    |x_localbuff_V_ce0              |  14|          3|    1|          3|) s
+5 302 M
+(    |x_localbuff_V_we0              |   9|          2|    1|          2|) s
+5 294 M
+(    +-------------------------------+----+-----------+-----+-----------+) s
+5 286 M
+(    |Total                          | 147|         30|   88|        193|) s
+5 278 M
+(    +-------------------------------+----+-----------+-----+-----------+) s
+5 262 M
+(    * Register: ) s
+5 254 M
+(    +--------------------------------------------------------+----+----+-----+-----------+) s
+5 246 M
+(    |                          Name                          | FF | LUT| Bits| Const Bits|) s
+5 238 M
+(    +--------------------------------------------------------+----+----+-----+-----------+) s
+5 230 M
+(    |acc_V_3_reg_249                                         |  38|   0|   38|          0|) s
+5 222 M
+(    |add_ln34_reg_728                                        |  32|   0|   32|          0|) s
+5 214 M
+(    |add_ln39_reg_741                                        |   7|   0|    7|          0|) s
+5 206 M
+(    |ap_CS_fsm                                               |  11|   0|   11|          0|) s
+5 198 M
+(    |col_size_read_reg_705                                   |  32|   0|   32|          0|) s
+5 190 M
+(    |grp_matVecMul_Pipeline_sample_loop_fu_261_ap_start_reg  |   1|   0|    1|          0|) s
+5 182 M
+(    |i_1_fu_166                                              |  32|   0|   32|          0|) s
+5 174 M
+(    |j_reg_238                                               |   7|   0|    7|          0|) s
+5 166 M
+(    |row_size_read_reg_711                                   |  32|   0|   32|          0|) s
+5 158 M
+(    |shl_ln_reg_733                                          |   6|   0|   13|          7|) s
+5 150 M
+(    |sub_reg_717                                             |  32|   0|   32|          0|) s
+5 142 M
+(    +--------------------------------------------------------+----+----+-----+-----------+) s
+5 134 M
+(    |Total                                                   | 230|   0|  237|          7|) s
+5 126 M
+(    +--------------------------------------------------------+----+----+-----+-----------+) s
+5 94 M
+(================================================================) s
+5 86 M
+(== Interface) s
+5 78 M
+(================================================================) s
+5 70 M
+(* Summary: ) s
+5 62 M
+(+-----------------------+-----+-----+------------+---------------------+--------------+) s
+5 54 M
+(|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object    |    C Type    |) s
+5 46 M
+(+-----------------------+-----+-----+------------+---------------------+--------------+) s
+5 38 M
+(|s_axi_control_AWVALID  |   in|    1|       s_axi|              control|         array|) s
+5 30 M
+(|s_axi_control_AWREADY  |  out|    1|       s_axi|              control|         array|) s
+5 22 M
+(|s_axi_control_AWADDR   |   in|   14|       s_axi|              control|         array|) s
+5 14 M
+(|s_axi_control_WVALID   |   in|    1|       s_axi|              control|         array|) s
+5 6 M
+(|s_axi_control_WREADY   |  out|    1|       s_axi|              control|         array|) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+90 rotate
+36 -577 translate
+/pagenum 4 def
+/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/ftail (matVecMul_csynth.rpt) def
+% User defined strings:
+/fmodstr (Mon May 04 03:06:58 2026) def
+/pagenumstr (4) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 534 M
+(|s_axi_control_WDATA    |   in|   32|       s_axi|              control|         array|) s
+5 526 M
+(|s_axi_control_WSTRB    |   in|    4|       s_axi|              control|         array|) s
+5 518 M
+(|s_axi_control_ARVALID  |   in|    1|       s_axi|              control|         array|) s
+5 510 M
+(|s_axi_control_ARREADY  |  out|    1|       s_axi|              control|         array|) s
+5 502 M
+(|s_axi_control_ARADDR   |   in|   14|       s_axi|              control|         array|) s
+5 494 M
+(|s_axi_control_RVALID   |  out|    1|       s_axi|              control|         array|) s
+5 486 M
+(|s_axi_control_RREADY   |   in|    1|       s_axi|              control|         array|) s
+5 478 M
+(|s_axi_control_RDATA    |  out|   32|       s_axi|              control|         array|) s
+5 470 M
+(|s_axi_control_RRESP    |  out|    2|       s_axi|              control|         array|) s
+5 462 M
+(|s_axi_control_BVALID   |  out|    1|       s_axi|              control|         array|) s
+5 454 M
+(|s_axi_control_BREADY   |   in|    1|       s_axi|              control|         array|) s
+5 446 M
+(|s_axi_control_BRESP    |  out|    2|       s_axi|              control|         array|) s
+5 438 M
+(|ap_clk                 |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+5 430 M
+(|ap_rst_n               |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+5 422 M
+(|interrupt              |  out|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+5 414 M
+(|in_stream_TDATA        |   in|   32|        axis|   in_stream_V_data_V|       pointer|) s
+5 406 M
+(|in_stream_TVALID       |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+5 398 M
+(|in_stream_TREADY       |  out|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+5 390 M
+(|in_stream_TDEST        |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+5 382 M
+(|in_stream_TKEEP        |   in|    4|        axis|   in_stream_V_keep_V|       pointer|) s
+5 374 M
+(|in_stream_TSTRB        |   in|    4|        axis|   in_stream_V_strb_V|       pointer|) s
+5 366 M
+(|in_stream_TUSER        |   in|    1|        axis|   in_stream_V_user_V|       pointer|) s
+5 358 M
+(|in_stream_TLAST        |   in|    1|        axis|   in_stream_V_last_V|       pointer|) s
+5 350 M
+(|in_stream_TID          |   in|    1|        axis|     in_stream_V_id_V|       pointer|) s
+5 342 M
+(|out_stream_TDATA       |  out|   32|        axis|  out_stream_V_data_V|       pointer|) s
+5 334 M
+(|out_stream_TVALID      |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 326 M
+(|out_stream_TREADY      |   in|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 318 M
+(|out_stream_TDEST       |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 310 M
+(|out_stream_TKEEP       |  out|    4|        axis|  out_stream_V_keep_V|       pointer|) s
+5 302 M
+(|out_stream_TSTRB       |  out|    4|        axis|  out_stream_V_strb_V|       pointer|) s
+5 294 M
+(|out_stream_TUSER       |  out|    1|        axis|  out_stream_V_user_V|       pointer|) s
+5 286 M
+(|out_stream_TLAST       |  out|    1|        axis|  out_stream_V_last_V|       pointer|) s
+5 278 M
+(|out_stream_TID         |  out|    1|        axis|    out_stream_V_id_V|       pointer|) s
+5 270 M
+(+-----------------------+-----+-----+------------+---------------------+--------------+) s
+_R
+S
+%%Trailer
+%%Pages: 4
+%%DocumentNeededResources: font Courier-Bold Courier 
+%%EOF
