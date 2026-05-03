@@ -5,6 +5,7 @@
 
 // Include your header file here
 #include "matVecMul.h"
+#include "test_data.h"
 
 int main() {
     // 1. Configuration
@@ -19,17 +20,19 @@ int main() {
     // Fixed-point storage
     data_ft A_hw[MAX_N][MAX_N];
     data_ft x_hw[MAX_N];
-    data_ft y_hw[MAX_N];
+    acc_ft y_hw[MAX_N];
 
     // 2. Data Initialization
     // We'll use values between -5.0 and 5.0 to test range and signs
     for (int i = 0; i < MAX_N; i++) {
-        float val_x = ((float)rand() / (float)RAND_MAX) * 10.0f - 5.0f;
+        // float val_x = ((float)rand() / (float)RAND_MAX) * 10.0f - 5.0f;
+        float val_x = x_gold[i];
         x_sw[i] = val_x;
         x_hw[i] = (data_ft)val_x;
 
         for (int j = 0; j < MAX_N; j++) {
-            float val_a = ((float)rand() / (float)RAND_MAX) * 2.0f - 1.0f;
+            // float val_a = ((float)rand() / (float)RAND_MAX) * 2.0f - 1.0f;
+            float val_a = A_gold[i][j];
             A_sw[i][j] = val_a;
             A_hw[i][j] = (data_ft)val_a;
         }

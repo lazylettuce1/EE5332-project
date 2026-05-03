@@ -21,7 +21,7 @@ void matVecMul (
 void matVecMul_fp (
     data_ft A[MAX_N][MAX_N], 
     data_ft x[MAX_N],
-    data_ft y[MAX_N], 
+    acc_ft y[MAX_N], 
     int row_size, int col_size
 )
 {
@@ -32,6 +32,6 @@ void matVecMul_fp (
             acc += A[i][j] * x[j];
         }
 
-        y[i] = (data_ft)acc;
+        y[i] = acc;
     }
 }

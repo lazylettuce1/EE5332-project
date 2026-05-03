@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fir_mmio.cpp" path="/home/aion/my_ws/ee5332/resources/lab5/hls/fir_mmio.cpp"/>
+    <originFiles name="fir_common.h" path="/home/aion/my_ws/ee5332/resources/lab5/hls/fir_common.h"/>
+    <originFiles name="fir_mmio.h" path="/home/aion/my_ws/ee5332/resources/lab5/hls/fir_mmio.h"/>
+  </source>
+  <testbench>
+    <originFiles name="fir_mmio_tb.cpp" path="/home/aion/my_ws/ee5332/resources/lab5/hls/fir_mmio_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

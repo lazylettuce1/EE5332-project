@@ -1,0 +1,105 @@
+INFO: [HLS 200-10] Running '/mnt/xilinx/Vitis_HLS/2021.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'aion' on host 'ASUS' (Linux_x86_64 version 6.17.0-22-generic) on Thu Apr 23 11:15:36 IST 2026
+INFO: [HLS 200-10] On os Ubuntu 24.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/aion/my_ws/ee5332/resources/lab5/hls'
+Sourcing Tcl script '/home/aion/my_ws/ee5332/resources/lab5/hls/lab5/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project lab5 
+INFO: [HLS 200-10] Opening project '/home/aion/my_ws/ee5332/resources/lab5/hls/lab5'.
+INFO: [HLS 200-1510] Running: set_top fir_mmio 
+INFO: [HLS 200-1510] Running: add_files fir_common.h 
+INFO: [HLS 200-10] Adding design file 'fir_common.h' to the project
+INFO: [HLS 200-1510] Running: add_files fir_mmio.cpp 
+INFO: [HLS 200-10] Adding design file 'fir_mmio.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files fir_mmio.h 
+INFO: [HLS 200-10] Adding design file 'fir_mmio.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb fir_mmio_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'fir_mmio_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/aion/my_ws/ee5332/resources/lab5/hls/lab5/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 12.5% 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 209.195 MB.
+INFO: [HLS 200-10] Analyzing design file 'fir_mmio.cpp' ... 
+WARNING: [HLS 207-5528] Ignore interface attribute or pragma which is not used in top function: fir_mmio.cpp:6:9
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.82 seconds. CPU system time: 0.43 seconds. Elapsed time: 0.63 seconds; current allocated memory: 210.144 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-279] Initial Interval estimation mode is set into default.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 214-270] Inferring complete partitioning for array 'coeffs' on dimension 1 (./fir_coeffs.h:9:0)
+INFO: [HLS 214-270] Inferring complete partitioning for array 'fir_mmio(float)::shift_reg' on dimension 1 (fir_mmio.cpp:9:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.35 seconds. CPU system time: 0.55 seconds. Elapsed time: 4.34 seconds; current allocated memory: 212.354 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 212.358 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 213.603 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 212.766 MB.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'fir_mmio' (fir_mmio.cpp:3).
+INFO: [HLS 200-489] Unrolling loop 'shift_loop' (fir_mmio.cpp:13) in function 'fir_mmio' completely with a factor of 20.
+INFO: [HLS 200-489] Unrolling loop 'mac_loop' (fir_mmio.cpp:21) in function 'fir_mmio' completely with a factor of 21.
+INFO: [XFORM 203-101] Partitioning array 'coeffs'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'shift_reg'  in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 232.922 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 224.982 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir_mmio' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_mmio' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'fir_mmio'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 109, function 'fir_mmio'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.42 seconds; current allocated memory: 225.714 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.66 seconds. CPU system time: 0 seconds. Elapsed time: 0.66 seconds; current allocated memory: 226.659 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_mmio' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_mmio/x_in' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir_mmio' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'shift_reg_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'shift_reg_0' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_mmio' pipeline 'fir_mmio' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 21 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_mmio'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.52 seconds. CPU system time: 0 seconds. Elapsed time: 0.53 seconds; current allocated memory: 229.892 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.78 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.78 seconds; current allocated memory: 234.938 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 242.139 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir_mmio.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir_mmio.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 9.92 seconds. CPU system time: 1.03 seconds. Elapsed time: 8.77 seconds; current allocated memory: 242.123 MB.
+INFO: [HLS 200-112] Total CPU user time: 12.71 seconds. Total CPU system time: 1.72 seconds. Total elapsed time: 10.96 seconds; peak allocated memory: 242.139 MB.

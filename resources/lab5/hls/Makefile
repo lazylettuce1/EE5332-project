@@ -22,7 +22,7 @@
 # ---- toolchain ----
 CXX      := g++
 CXXFLAGS := -std=c++14 -g -O0 -Wall -Wno-unknown-pragmas -Wno-int-in-bool-context
-XILINX_HLS ?= /opt/Xilinx/Vitis_HLS/2021.1
+XILINX_HLS ?= /mnt/xilinx/Vitis_HLS/2021.1
 HLS_INC  := -I$(XILINX_HLS)/include
 
 PART     := xc7z020clg400-1

@@ -40,7 +40,7 @@ void fir_stream(hls::stream<axis_pkt_t> &in_stream,
 #pragma HLS INTERFACE s_axilite port=n
 #pragma HLS INTERFACE s_axilite port=return
 
-    static data_t shift_reg[N_TAPS] = {0};
+    static data_t shift_reg[N_TAPS] = {-1};
 
     sample_loop:
     for (int i = 0; i < n; i++) {
