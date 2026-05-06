@@ -2,7 +2,7 @@
 %%BoundingBox: 18 36 577 806
 %%Title: Enscript Output
 %%Creator: GNU Enscript 1.6.5.90
-%%CreationDate: Mon May  4 03:07:23 2026
+%%CreationDate: Tue May  5 15:53:37 2026
 %%Orientation: Landscape
 %%Pages: (atend)
 %%DocumentMedia: A4 595 842 0 () ()
@@ -452,11 +452,11 @@ _S
 90 rotate
 36 -577 translate
 /pagenum 1 def
-/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
-/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/fname (matVecMul_stream_prj/solution_chocolate/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution_chocolate/syn/report) def
 /ftail (matVecMul_csynth.rpt) def
 % User defined strings:
-/fmodstr (Mon May 04 03:06:58 2026) def
+/fmodstr (Tue May 05 15:50:00 2026) def
 /pagenumstr (1) def
 /user_header_p false def
 /user_footer_p false def
@@ -469,13 +469,13 @@ do_header
 5 502 M
 (================================================================) s
 5 494 M
-(* Date:           Mon May  4 03:06:58 2026) s
+(* Date:           Tue May  5 15:50:00 2026) s
 5 478 M
 (* Version:        2021.1 \(Build 3247384 on Thu Jun 10 19:36:07 MDT 2021\)) s
 5 470 M
 (* Project:        matVecMul_stream_prj) s
 5 462 M
-(* Solution:       solution3 \(Vivado IP Flow Target\)) s
+(* Solution:       solution_chocolate \(Vivado IP Flow Target\)) s
 5 454 M
 (* Product family: zynq) s
 5 446 M
@@ -491,89 +491,89 @@ do_header
 5 390 M
 (    * Summary: ) s
 5 382 M
-(    +--------+----------+----------+------------+) s
+(    +--------+----------+-----------+------------+) s
 5 374 M
-(    |  Clock |  Target  | Estimated| Uncertainty|) s
+(    |  Clock |  Target  | Estimated | Uncertainty|) s
 5 366 M
-(    +--------+----------+----------+------------+) s
+(    +--------+----------+-----------+------------+) s
 5 358 M
-(    |ap_clk  |  10.00 ns|  5.831 ns|     2.70 ns|) s
+(    |ap_clk  |  10.00 ns|  18.153 ns|     2.70 ns|) s
 5 350 M
-(    +--------+----------+----------+------------+) s
+(    +--------+----------+-----------+------------+) s
 5 334 M
 (+ Latency: ) s
 5 326 M
 (    * Summary: ) s
 5 318 M
-(    +---------+---------+----------+----------+-------+-------+---------+) s
+(    +---------+---------+-----------+-----------+------+------+---------+) s
 5 310 M
-(    |  Latency \(cycles\) |  Latency \(absolute\) |    Interval   | Pipeline|) s
+(    |  Latency \(cycles\) |   Latency \(absolute\)  |   Interval  | Pipeline|) s
 5 302 M
-(    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |) s
+(    |   min   |   max   |    min    |    max    |  min |  max |   Type  |) s
 5 294 M
-(    +---------+---------+----------+----------+-------+-------+---------+) s
+(    +---------+---------+-----------+-----------+------+------+---------+) s
 5 286 M
-(    |    20742|    20742|  0.207 ms|  0.207 ms|  20743|  20743|       no|) s
+(    |     1863|     3853|  33.819 us|  69.944 us|  1864|  3854|       no|) s
 5 278 M
-(    +---------+---------+----------+----------+-------+-------+---------+) s
+(    +---------+---------+-----------+-----------+------+------+---------+) s
 5 262 M
 (    + Detail: ) s
 5 254 M
 (        * Instance: ) s
 5 246 M
-(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
+(        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
 5 238 M
-(        |                                           |                                |  Latency \(cycles\) |  Latency \(absolute\) |  Interval | Pipeline|) s
+(        |                                                 |                                      |  Latency \(cycles\) |  Latency \(absolute\) |  Interval | Pipeline|) s
 5 230 M
-(        |                  Instance                 |             Module             |   min   |   max   |    min   |    max   | min | max |   Type  |) s
+(        |                     Instance                    |                Module                |   min   |   max   |    min   |    max   | min | max |   Type  |) s
 5 222 M
-(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
+(        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
 5 214 M
-(        |grp_matVecMul_Pipeline_sample_loop_fu_261  |matVecMul_Pipeline_sample_loop  |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|) s
+(        |grp_matVecMul_Pipeline_sample_loop_fu_251        |matVecMul_Pipeline_sample_loop        |       66|       66|  1.198 us|  1.198 us|   66|   66|       no|) s
 5 206 M
-(        +-------------------------------------------+--------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
-5 190 M
-(        * Loop: ) s
+(        |grp_matVecMul_Pipeline_matmul_inner_loop_fu_278  |matVecMul_Pipeline_matmul_inner_loop  |       23|       24|  0.418 us|  0.436 us|   23|   24|       no|) s
+5 198 M
+(        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+) s
 5 182 M
-(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
+(        * Loop: ) s
 5 174 M
-(        |                      |  Latency \(cycles\) | Iteration|  Initiation Interval  | Trip |          |) s
+(        +----------------------+---------+---------+-------------+-----------+-----------+-------+----------+) s
 5 166 M
-(        |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|) s
+(        |                      |  Latency \(cycles\) |  Iteration  |  Initiation Interval  |  Trip |          |) s
 5 158 M
-(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
+(        |       Loop Name      |   min   |   max   |   Latency   |  achieved |   target  | Count | Pipelined|) s
 5 150 M
-(        |- matmul_outer_loop   |    20672|    20672|       323|          -|          -|    64|        no|) s
+(        +----------------------+---------+---------+-------------+-----------+-----------+-------+----------+) s
 5 142 M
-(        | + matmul_inner_loop  |      320|      320|         5|          -|          -|    64|        no|) s
+(        |- vector_loop         |     1862|     3852|  1862 ~ 1926|          -|          -|  1 ~ 2|        no|) s
 5 134 M
-(        +----------------------+---------+---------+----------+-----------+-----------+------+----------+) s
-5 102 M
-(================================================================) s
+(        | + matmul_outer_loop  |     1792|     1856|      28 ~ 29|          -|          -|     64|        no|) s
+5 126 M
+(        +----------------------+---------+---------+-------------+-----------+-----------+-------+----------+) s
 5 94 M
-(== Utilization Estimates) s
-5 86 M
 (================================================================) s
+5 86 M
+(== Utilization Estimates) s
 5 78 M
-(* Summary: ) s
+(================================================================) s
 5 70 M
-(+-----------------+---------+-----+--------+-------+-----+) s
+(* Summary: ) s
 5 62 M
-(|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|) s
-5 54 M
 (+-----------------+---------+-----+--------+-------+-----+) s
+5 54 M
+(|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|) s
 5 46 M
-(|DSP              |        -|    1|       -|      -|    -|) s
+(+-----------------+---------+-----+--------+-------+-----+) s
 5 38 M
-(|Expression       |        -|    -|       0|    460|    -|) s
+(|DSP              |        -|    -|       -|      -|    -|) s
 5 30 M
-(|FIFO             |        -|    -|       -|      -|    -|) s
+(|Expression       |        -|    -|       0|    294|    -|) s
 5 22 M
-(|Instance         |        4|    -|     201|    310|    -|) s
+(|FIFO             |        -|    -|       -|      -|    -|) s
 5 14 M
-(|Memory           |        1|    -|       0|      0|    0|) s
+(|Instance         |        4|    4|    1193|   1963|    -|) s
 5 6 M
-(|Multiplexer      |        -|    -|       -|    147|    -|) s
+(|Memory           |        0|    -|     128|     16|    0|) s
 _R
 S
 %%Page: (2) 2
@@ -582,140 +582,140 @@ _S
 90 rotate
 36 -577 translate
 /pagenum 2 def
-/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
-/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/fname (matVecMul_stream_prj/solution_chocolate/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution_chocolate/syn/report) def
 /ftail (matVecMul_csynth.rpt) def
 % User defined strings:
-/fmodstr (Mon May 04 03:06:58 2026) def
+/fmodstr (Tue May 05 15:50:00 2026) def
 /pagenumstr (2) def
 /user_header_p false def
 /user_footer_p false def
 %%EndPageSetup
 do_header
 5 534 M
-(|Register         |        -|    -|     230|      -|    -|) s
+(|Multiplexer      |        -|    -|       -|    237|    -|) s
 5 526 M
-(+-----------------+---------+-----+--------+-------+-----+) s
+(|Register         |        -|    -|     444|      -|    -|) s
 5 518 M
-(|Total            |        5|    1|     431|    917|    0|) s
+(+-----------------+---------+-----+--------+-------+-----+) s
 5 510 M
-(+-----------------+---------+-----+--------+-------+-----+) s
+(|Total            |        4|    4|    1765|   2510|    0|) s
 5 502 M
-(|Available        |      280|  220|  106400|  53200|    0|) s
+(+-----------------+---------+-----+--------+-------+-----+) s
 5 494 M
-(+-----------------+---------+-----+--------+-------+-----+) s
+(|Available        |      280|  220|  106400|  53200|    0|) s
 5 486 M
-(|Utilization \(%\)  |        1|   ~0|      ~0|      1|    0|) s
-5 478 M
 (+-----------------+---------+-----+--------+-------+-----+) s
-5 462 M
-(+ Detail: ) s
+5 478 M
+(|Utilization \(%\)  |        1|    1|       1|      4|    0|) s
+5 470 M
+(+-----------------+---------+-----+--------+-------+-----+) s
 5 454 M
-(    * Instance: ) s
+(+ Detail: ) s
 5 446 M
-(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+(    * Instance: ) s
 5 438 M
-(    |                  Instance                 |             Module             | BRAM_18K| DSP|  FF | LUT | URAM|) s
+(    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+) s
 5 430 M
-(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+(    |                     Instance                    |                Module                | BRAM_18K| DSP|  FF |  LUT | URAM|) s
 5 422 M
-(    |control_s_axi_U                            |control_s_axi                   |        4|   0|  192|  238|    0|) s
+(    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+) s
 5 414 M
-(    |grp_matVecMul_Pipeline_sample_loop_fu_261  |matVecMul_Pipeline_sample_loop  |        0|   0|    9|   72|    0|) s
+(    |control_s_axi_U                                  |control_s_axi                         |        4|   0|  470|   512|    0|) s
 5 406 M
-(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+(    |grp_matVecMul_Pipeline_matmul_inner_loop_fu_278  |matVecMul_Pipeline_matmul_inner_loop  |        0|   4|  689|  1334|    0|) s
 5 398 M
-(    |Total                                      |                                |        4|   0|  201|  310|    0|) s
+(    |grp_matVecMul_Pipeline_sample_loop_fu_251        |matVecMul_Pipeline_sample_loop        |        0|   0|   34|    97|    0|) s
 5 390 M
-(    +-------------------------------------------+--------------------------------+---------+----+-----+-----+-----+) s
+(    |mux_42_38_1_1_U32                                |mux_42_38_1_1                         |        0|   0|    0|    20|    0|) s
+5 382 M
+(    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+) s
 5 374 M
-(    * DSP: ) s
+(    |Total                                            |                                      |        4|   4| 1193|  1963|    0|) s
 5 366 M
-(    +----------------------------+------------------------+-----------+) s
-5 358 M
-(    |          Instance          |         Module         | Expression|) s
+(    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+) s
 5 350 M
-(    +----------------------------+------------------------+-----------+) s
+(    * DSP: ) s
 5 342 M
-(    |mul_mul_16s_16s_32_4_1_U10  |mul_mul_16s_16s_32_4_1  |    i0 * i1|) s
-5 334 M
-(    +----------------------------+------------------------+-----------+) s
-5 318 M
-(    * Memory: ) s
-5 310 M
-(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
-5 302 M
-(    |      Memory     |     Module    | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|) s
-5 294 M
-(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
-5 286 M
-(    |x_localbuff_V_U  |x_localbuff_V  |        1|  0|   0|    0|    64|   16|     1|         1024|) s
-5 278 M
-(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
-5 270 M
-(    |Total            |               |        1|  0|   0|    0|    64|   16|     1|         1024|) s
-5 262 M
-(    +-----------------+---------------+---------+---+----+-----+------+-----+------+-------------+) s
-5 246 M
-(    * FIFO: ) s
-5 238 M
 (    N/A) s
+5 326 M
+(    * Memory: ) s
+5 318 M
+(    +-------------------+-----------------+---------+----+----+-----+------+-----+------+-------------+) s
+5 310 M
+(    |       Memory      |      Module     | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|) s
+5 302 M
+(    +-------------------+-----------------+---------+----+----+-----+------+-----+------+-------------+) s
+5 294 M
+(    |x_localbuff_V_0_U  |x_localbuff_V_0  |        0|  32|   4|    0|    16|   16|     1|          256|) s
+5 286 M
+(    |x_localbuff_V_1_U  |x_localbuff_V_0  |        0|  32|   4|    0|    16|   16|     1|          256|) s
+5 278 M
+(    |x_localbuff_V_2_U  |x_localbuff_V_0  |        0|  32|   4|    0|    16|   16|     1|          256|) s
+5 270 M
+(    |x_localbuff_V_3_U  |x_localbuff_V_0  |        0|  32|   4|    0|    16|   16|     1|          256|) s
+5 262 M
+(    +-------------------+-----------------+---------+----+----+-----+------+-----+------+-------------+) s
+5 254 M
+(    |Total              |                 |        0| 128|  16|    0|    64|   64|     4|         1024|) s
+5 246 M
+(    +-------------------+-----------------+---------+----+----+-----+------+-----+------+-------------+) s
+5 230 M
+(    * FIFO: ) s
 5 222 M
-(    * Expression: ) s
-5 214 M
-(    +-------------------------------+----------+----+---+----+------------+------------+) s
+(    N/A) s
 5 206 M
-(    |         Variable Name         | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|) s
+(    * Expression: ) s
 5 198 M
-(    +-------------------------------+----------+----+---+----+------------+------------+) s
+(    +----------------------------+----------+----+---+----+------------+------------+) s
 5 190 M
-(    |acc_V_4_fu_642_p2              |         +|   0|  0|  45|          38|          38|) s
+(    |        Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|) s
 5 182 M
-(    |add_ln1169_fu_350_p2           |         +|   0|  0|  14|          13|          13|) s
+(    +----------------------------+----------+----+---+----+------------+------------+) s
 5 174 M
-(    |add_ln34_fu_300_p2             |         +|   0|  0|  39|          32|           1|) s
+(    |add_ln32_fu_327_p2          |         +|   0|  0|  38|          31|           1|) s
 5 166 M
-(    |add_ln39_fu_332_p2             |         +|   0|  0|  14|           7|           1|) s
+(    |add_ln44_fu_338_p2          |         +|   0|  0|  39|          32|           1|) s
 5 158 M
-(    |p_Val2_1_fu_420_p2             |         +|   0|  0|  23|          16|          16|) s
+(    |p_Val2_1_fu_429_p2          |         +|   0|  0|  23|          16|          16|) s
 5 150 M
-(    |ret_V_fu_628_p2                |         +|   0|  0|  46|          39|          39|) s
+(    |sub_fu_304_p2               |         +|   0|  0|  39|          32|           2|) s
 5 142 M
-(    |sub_fu_287_p2                  |         +|   0|  0|  39|          32|           2|) s
+(    |and_ln789_fu_515_p2         |       and|   0|  0|   2|           1|           1|) s
 5 134 M
-(    |and_ln789_fu_506_p2            |       and|   0|  0|   2|           1|           1|) s
+(    |and_ln790_fu_529_p2         |       and|   0|  0|   2|           1|           1|) s
 5 126 M
-(    |and_ln790_fu_520_p2            |       and|   0|  0|   2|           1|           1|) s
+(    |and_ln795_fu_559_p2         |       and|   0|  0|   2|           1|           1|) s
 5 118 M
-(    |and_ln795_fu_550_p2            |       and|   0|  0|   2|           1|           1|) s
+(    |carry_1_fu_449_p2           |       and|   0|  0|   2|           1|           1|) s
 5 110 M
-(    |ap_block_state6                |       and|   0|  0|   2|           1|           1|) s
+(    |overflow_fu_553_p2          |       and|   0|  0|   2|           1|           1|) s
 5 102 M
-(    |carry_1_fu_440_p2              |       and|   0|  0|   2|           1|           1|) s
+(    |underflow_fu_577_p2         |       and|   0|  0|   2|           1|           1|) s
 5 94 M
-(    |overflow_1_fu_544_p2           |       and|   0|  0|   2|           1|           1|) s
+(    |Range1_all_ones_fu_481_p2   |      icmp|   0|  0|  12|          14|           2|) s
 5 86 M
-(    |overflow_fu_662_p2             |       and|   0|  0|   2|           1|           1|) s
+(    |Range1_all_zeros_fu_487_p2  |      icmp|   0|  0|  12|          14|           1|) s
 5 78 M
-(    |underflow_fu_568_p2            |       and|   0|  0|   2|           1|           1|) s
+(    |Range2_all_ones_fu_465_p2   |      icmp|   0|  0|  12|          13|           2|) s
 5 70 M
-(    |Range1_all_ones_fu_472_p2      |      icmp|   0|  0|  12|          14|           2|) s
+(    |icmp_ln32_fu_322_p2         |      icmp|   0|  0|  18|          32|          32|) s
 5 62 M
-(    |Range1_all_zeros_fu_478_p2     |      icmp|   0|  0|  12|          14|           1|) s
+(    |icmp_ln44_fu_333_p2         |      icmp|   0|  0|  18|          32|          32|) s
 5 54 M
-(    |Range2_all_ones_fu_456_p2      |      icmp|   0|  0|  12|          13|           2|) s
+(    |out_pkt_last_V_fu_357_p2    |      icmp|   0|  0|  18|          32|          32|) s
 5 46 M
-(    |icmp_ln34_fu_295_p2            |      icmp|   0|  0|  18|          32|          32|) s
+(    |or_ln384_fu_583_p2          |        or|   0|  0|   2|           1|           1|) s
 5 38 M
-(    |icmp_ln39_fu_327_p2            |      icmp|   0|  0|  18|          32|          32|) s
+(    |or_ln794_fu_541_p2          |        or|   0|  0|   2|           1|           1|) s
 5 30 M
-(    |out_stream_TLAST_int_regslice  |      icmp|   0|  0|  18|          32|          32|) s
+(    |or_ln795_fu_565_p2          |        or|   0|  0|   2|           1|           1|) s
 5 22 M
-(    |or_ln384_fu_582_p2             |        or|   0|  0|   2|           1|           1|) s
+(    |deleted_ones_fu_521_p3      |    select|   0|  0|   2|           1|           1|) s
 5 14 M
-(    |or_ln794_fu_532_p2             |        or|   0|  0|   2|           1|           1|) s
+(    |deleted_zeros_fu_493_p3     |    select|   0|  0|   2|           1|           1|) s
 5 6 M
-(    |or_ln795_fu_556_p2             |        or|   0|  0|   2|           1|           1|) s
+(    |select_ln384_fu_589_p3      |    select|   0|  0|  17|           1|          15|) s
 _R
 S
 %%Page: (3) 3
@@ -724,140 +724,140 @@ _S
 90 rotate
 36 -577 translate
 /pagenum 3 def
-/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
-/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/fname (matVecMul_stream_prj/solution_chocolate/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution_chocolate/syn/report) def
 /ftail (matVecMul_csynth.rpt) def
 % User defined strings:
-/fmodstr (Mon May 04 03:06:58 2026) def
+/fmodstr (Tue May 05 15:50:00 2026) def
 /pagenumstr (3) def
 /user_header_p false def
 /user_footer_p false def
 %%EndPageSetup
 do_header
 5 534 M
-(    |acc_V_fu_682_p3                |    select|   0|  0|  38|           1|          38|) s
+(    |val_V_fu_596_p3             |    select|   0|  0|  16|           1|          16|) s
 5 526 M
-(    |deleted_ones_fu_512_p3         |    select|   0|  0|   2|           1|           1|) s
+(    |xor_ln416_fu_443_p2         |       xor|   0|  0|   2|           1|           2|) s
 5 518 M
-(    |deleted_zeros_fu_484_p3        |    select|   0|  0|   2|           1|           1|) s
+(    |xor_ln789_fu_509_p2         |       xor|   0|  0|   2|           1|           2|) s
 5 510 M
-(    |select_ln384_1_fu_574_p3       |    select|   0|  0|  17|           1|          15|) s
+(    |xor_ln794_1_fu_547_p2       |       xor|   0|  0|   2|           1|           2|) s
 5 502 M
-(    |select_ln384_fu_674_p3         |    select|   0|  0|  39|           1|          37|) s
+(    |xor_ln794_fu_535_p2         |       xor|   0|  0|   2|           1|           2|) s
 5 494 M
-(    |val_V_fu_588_p3                |    select|   0|  0|  16|           1|          16|) s
+(    |xor_ln795_fu_571_p2         |       xor|   0|  0|   2|           1|           2|) s
 5 486 M
-(    |xor_ln340_fu_668_p2            |       xor|   0|  0|   2|           1|           1|) s
+(    +----------------------------+----------+----+---+----+------------+------------+) s
 5 478 M
-(    |xor_ln416_fu_434_p2            |       xor|   0|  0|   2|           1|           2|) s
+(    |Total                       |          |   0|  0| 294|         266|         173|) s
 5 470 M
-(    |xor_ln789_fu_500_p2            |       xor|   0|  0|   2|           1|           2|) s
-5 462 M
-(    |xor_ln794_1_fu_526_p2          |       xor|   0|  0|   2|           1|           2|) s
+(    +----------------------------+----------+----+---+----+------------+------------+) s
 5 454 M
-(    |xor_ln794_2_fu_538_p2          |       xor|   0|  0|   2|           1|           2|) s
-5 446 M
-(    |xor_ln794_fu_656_p2            |       xor|   0|  0|   2|           1|           2|) s
-5 438 M
-(    |xor_ln795_fu_562_p2            |       xor|   0|  0|   2|           1|           2|) s
-5 430 M
-(    +-------------------------------+----------+----+---+----+------------+------------+) s
-5 422 M
-(    |Total                          |          |   0|  0| 460|         338|         343|) s
-5 414 M
-(    +-------------------------------+----------+----+---+----+------------+------------+) s
-5 398 M
 (    * Multiplexer: ) s
-5 390 M
+5 446 M
 (    +-------------------------------+----+-----------+-----+-----------+) s
-5 382 M
+5 438 M
 (    |              Name             | LUT| Input Size| Bits| Total Bits|) s
-5 374 M
+5 430 M
 (    +-------------------------------+----+-----------+-----+-----------+) s
-5 366 M
-(    |acc_V_3_reg_249                |   9|          2|   38|         76|) s
-5 358 M
-(    |ap_NS_fsm                      |  65|         12|    1|         12|) s
-5 350 M
-(    |i_1_fu_166                     |   9|          2|   32|         64|) s
-5 342 M
+5 422 M
+(    |ap_NS_fsm                      |  53|         10|    1|         10|) s
+5 414 M
+(    |i_fu_172                       |   9|          2|   31|         62|) s
+5 406 M
 (    |in_stream_TREADY_int_regslice  |   9|          2|    1|          2|) s
-5 334 M
-(    |j_reg_238                      |   9|          2|    7|         14|) s
-5 326 M
+5 398 M
+(    |k_reg_240                      |   9|          2|   32|         64|) s
+5 390 M
 (    |out_stream_TDATA_blk_n         |   9|          2|    1|          2|) s
+5 382 M
+(    |x_localbuff_V_0_address0       |  14|          3|    4|         12|) s
+5 374 M
+(    |x_localbuff_V_0_ce0            |  14|          3|    1|          3|) s
+5 366 M
+(    |x_localbuff_V_0_we0            |   9|          2|    1|          2|) s
+5 358 M
+(    |x_localbuff_V_1_address0       |  14|          3|    4|         12|) s
+5 350 M
+(    |x_localbuff_V_1_ce0            |  14|          3|    1|          3|) s
+5 342 M
+(    |x_localbuff_V_1_we0            |   9|          2|    1|          2|) s
+5 334 M
+(    |x_localbuff_V_2_address0       |  14|          3|    4|         12|) s
+5 326 M
+(    |x_localbuff_V_2_ce0            |  14|          3|    1|          3|) s
 5 318 M
-(    |x_localbuff_V_address0         |  14|          3|    6|         18|) s
+(    |x_localbuff_V_2_we0            |   9|          2|    1|          2|) s
 5 310 M
-(    |x_localbuff_V_ce0              |  14|          3|    1|          3|) s
+(    |x_localbuff_V_3_address0       |  14|          3|    4|         12|) s
 5 302 M
-(    |x_localbuff_V_we0              |   9|          2|    1|          2|) s
+(    |x_localbuff_V_3_ce0            |  14|          3|    1|          3|) s
 5 294 M
-(    +-------------------------------+----+-----------+-----+-----------+) s
+(    |x_localbuff_V_3_we0            |   9|          2|    1|          2|) s
 5 286 M
-(    |Total                          | 147|         30|   88|        193|) s
-5 278 M
 (    +-------------------------------+----+-----------+-----+-----------+) s
-5 262 M
-(    * Register: ) s
+5 278 M
+(    |Total                          | 237|         50|   90|        208|) s
+5 270 M
+(    +-------------------------------+----+-----------+-----+-----------+) s
 5 254 M
-(    +--------------------------------------------------------+----+----+-----+-----------+) s
+(    * Register: ) s
 5 246 M
-(    |                          Name                          | FF | LUT| Bits| Const Bits|) s
+(    +--------------------------------------------------------------+----+----+-----+-----------+) s
 5 238 M
-(    +--------------------------------------------------------+----+----+-----+-----------+) s
+(    |                             Name                             | FF | LUT| Bits| Const Bits|) s
 5 230 M
-(    |acc_V_3_reg_249                                         |  38|   0|   38|          0|) s
+(    +--------------------------------------------------------------+----+----+-----+-----------+) s
 5 222 M
-(    |add_ln34_reg_728                                        |  32|   0|   32|          0|) s
+(    |acc_V_0_loc_fu_188                                            |  38|   0|   38|          0|) s
 5 214 M
-(    |add_ln39_reg_741                                        |   7|   0|    7|          0|) s
+(    |add_ln32_reg_662                                              |  31|   0|   31|          0|) s
 5 206 M
-(    |ap_CS_fsm                                               |  11|   0|   11|          0|) s
+(    |add_ln44_reg_670                                              |  32|   0|   32|          0|) s
 5 198 M
-(    |col_size_read_reg_705                                   |  32|   0|   32|          0|) s
+(    |ap_CS_fsm                                                     |   9|   0|    9|          0|) s
 5 190 M
-(    |grp_matVecMul_Pipeline_sample_loop_fu_261_ap_start_reg  |   1|   0|    1|          0|) s
+(    |col_size_read_reg_614                                         |  32|   0|   32|          0|) s
 5 182 M
-(    |i_1_fu_166                                              |  32|   0|   32|          0|) s
+(    |grp_matVecMul_Pipeline_matmul_inner_loop_fu_278_ap_start_reg  |   1|   0|    1|          0|) s
 5 174 M
-(    |j_reg_238                                               |   7|   0|    7|          0|) s
+(    |grp_matVecMul_Pipeline_sample_loop_fu_251_ap_start_reg        |   1|   0|    1|          0|) s
 5 166 M
-(    |row_size_read_reg_711                                   |  32|   0|   32|          0|) s
+(    |i_fu_172                                                      |  31|   0|   31|          0|) s
 5 158 M
-(    |shl_ln_reg_733                                          |   6|   0|   13|          7|) s
+(    |k_reg_240                                                     |  32|   0|   32|          0|) s
 5 150 M
-(    |sub_reg_717                                             |  32|   0|   32|          0|) s
+(    |no_of_vectors_read_reg_625                                    |  32|   0|   32|          0|) s
 5 142 M
-(    +--------------------------------------------------------+----+----+-----+-----------+) s
+(    |or_ln384_reg_700                                              |   1|   0|    1|          0|) s
 5 134 M
-(    |Total                                                   | 230|   0|  237|          7|) s
+(    |out_pkt_last_V_reg_680                                        |   1|   0|    1|          0|) s
 5 126 M
-(    +--------------------------------------------------------+----+----+-----+-----------+) s
+(    |overflow_reg_695                                              |   1|   0|    1|          0|) s
+5 118 M
+(    |p_Val2_1_reg_690                                              |  16|   0|   16|          0|) s
+5 110 M
+(    |row_size_read_reg_620                                         |  32|   0|   32|          0|) s
+5 102 M
+(    |select_ln340_1_loc_fu_180                                     |  38|   0|   38|          0|) s
 5 94 M
-(================================================================) s
+(    |select_ln340_2_loc_fu_184                                     |  38|   0|   38|          0|) s
 5 86 M
-(== Interface) s
+(    |select_ln340_loc_fu_176                                       |  38|   0|   38|          0|) s
 5 78 M
-(================================================================) s
+(    |shl_ln_reg_675                                                |   6|   0|   11|          5|) s
 5 70 M
-(* Summary: ) s
+(    |sub_reg_654                                                   |  32|   0|   32|          0|) s
 5 62 M
-(+-----------------------+-----+-----+------------+---------------------+--------------+) s
+(    |targetBlock_reg_685                                           |   2|   0|    2|          0|) s
 5 54 M
-(|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object    |    C Type    |) s
+(    +--------------------------------------------------------------+----+----+-----+-----------+) s
 5 46 M
-(+-----------------------+-----+-----+------------+---------------------+--------------+) s
+(    |Total                                                         | 444|   0|  449|          5|) s
 5 38 M
-(|s_axi_control_AWVALID  |   in|    1|       s_axi|              control|         array|) s
-5 30 M
-(|s_axi_control_AWREADY  |  out|    1|       s_axi|              control|         array|) s
-5 22 M
-(|s_axi_control_AWADDR   |   in|   14|       s_axi|              control|         array|) s
-5 14 M
-(|s_axi_control_WVALID   |   in|    1|       s_axi|              control|         array|) s
+(    +--------------------------------------------------------------+----+----+-----+-----------+) s
 5 6 M
-(|s_axi_control_WREADY   |  out|    1|       s_axi|              control|         array|) s
+(================================================================) s
 _R
 S
 %%Page: (4) 4
@@ -866,83 +866,105 @@ _S
 90 rotate
 36 -577 translate
 /pagenum 4 def
-/fname (matVecMul_stream_prj/solution3/syn/report/matVecMul_csynth.rpt) def
-/fdir (matVecMul_stream_prj/solution3/syn/report) def
+/fname (matVecMul_stream_prj/solution_chocolate/syn/report/matVecMul_csynth.rpt) def
+/fdir (matVecMul_stream_prj/solution_chocolate/syn/report) def
 /ftail (matVecMul_csynth.rpt) def
 % User defined strings:
-/fmodstr (Mon May 04 03:06:58 2026) def
+/fmodstr (Tue May 05 15:50:00 2026) def
 /pagenumstr (4) def
 /user_header_p false def
 /user_footer_p false def
 %%EndPageSetup
 do_header
 5 534 M
-(|s_axi_control_WDATA    |   in|   32|       s_axi|              control|         array|) s
+(== Interface) s
 5 526 M
-(|s_axi_control_WSTRB    |   in|    4|       s_axi|              control|         array|) s
+(================================================================) s
 5 518 M
-(|s_axi_control_ARVALID  |   in|    1|       s_axi|              control|         array|) s
+(* Summary: ) s
 5 510 M
-(|s_axi_control_ARREADY  |  out|    1|       s_axi|              control|         array|) s
+(+-----------------------+-----+-----+------------+---------------------+--------------+) s
 5 502 M
-(|s_axi_control_ARADDR   |   in|   14|       s_axi|              control|         array|) s
+(|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object    |    C Type    |) s
 5 494 M
-(|s_axi_control_RVALID   |  out|    1|       s_axi|              control|         array|) s
+(+-----------------------+-----+-----+------------+---------------------+--------------+) s
 5 486 M
-(|s_axi_control_RREADY   |   in|    1|       s_axi|              control|         array|) s
+(|s_axi_control_AWVALID  |   in|    1|       s_axi|              control|         array|) s
 5 478 M
-(|s_axi_control_RDATA    |  out|   32|       s_axi|              control|         array|) s
+(|s_axi_control_AWREADY  |  out|    1|       s_axi|              control|         array|) s
 5 470 M
-(|s_axi_control_RRESP    |  out|    2|       s_axi|              control|         array|) s
+(|s_axi_control_AWADDR   |   in|   14|       s_axi|              control|         array|) s
 5 462 M
-(|s_axi_control_BVALID   |  out|    1|       s_axi|              control|         array|) s
+(|s_axi_control_WVALID   |   in|    1|       s_axi|              control|         array|) s
 5 454 M
-(|s_axi_control_BREADY   |   in|    1|       s_axi|              control|         array|) s
+(|s_axi_control_WREADY   |  out|    1|       s_axi|              control|         array|) s
 5 446 M
-(|s_axi_control_BRESP    |  out|    2|       s_axi|              control|         array|) s
+(|s_axi_control_WDATA    |   in|   32|       s_axi|              control|         array|) s
 5 438 M
-(|ap_clk                 |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+(|s_axi_control_WSTRB    |   in|    4|       s_axi|              control|         array|) s
 5 430 M
-(|ap_rst_n               |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+(|s_axi_control_ARVALID  |   in|    1|       s_axi|              control|         array|) s
 5 422 M
-(|interrupt              |  out|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
+(|s_axi_control_ARREADY  |  out|    1|       s_axi|              control|         array|) s
 5 414 M
-(|in_stream_TDATA        |   in|   32|        axis|   in_stream_V_data_V|       pointer|) s
+(|s_axi_control_ARADDR   |   in|   14|       s_axi|              control|         array|) s
 5 406 M
-(|in_stream_TVALID       |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+(|s_axi_control_RVALID   |  out|    1|       s_axi|              control|         array|) s
 5 398 M
-(|in_stream_TREADY       |  out|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+(|s_axi_control_RREADY   |   in|    1|       s_axi|              control|         array|) s
 5 390 M
-(|in_stream_TDEST        |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
+(|s_axi_control_RDATA    |  out|   32|       s_axi|              control|         array|) s
 5 382 M
-(|in_stream_TKEEP        |   in|    4|        axis|   in_stream_V_keep_V|       pointer|) s
+(|s_axi_control_RRESP    |  out|    2|       s_axi|              control|         array|) s
 5 374 M
-(|in_stream_TSTRB        |   in|    4|        axis|   in_stream_V_strb_V|       pointer|) s
+(|s_axi_control_BVALID   |  out|    1|       s_axi|              control|         array|) s
 5 366 M
-(|in_stream_TUSER        |   in|    1|        axis|   in_stream_V_user_V|       pointer|) s
+(|s_axi_control_BREADY   |   in|    1|       s_axi|              control|         array|) s
 5 358 M
-(|in_stream_TLAST        |   in|    1|        axis|   in_stream_V_last_V|       pointer|) s
+(|s_axi_control_BRESP    |  out|    2|       s_axi|              control|         array|) s
 5 350 M
-(|in_stream_TID          |   in|    1|        axis|     in_stream_V_id_V|       pointer|) s
+(|ap_clk                 |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
 5 342 M
-(|out_stream_TDATA       |  out|   32|        axis|  out_stream_V_data_V|       pointer|) s
+(|ap_rst_n               |   in|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
 5 334 M
-(|out_stream_TVALID      |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+(|interrupt              |  out|    1|  ap_ctrl_hs|            matVecMul|  return value|) s
 5 326 M
-(|out_stream_TREADY      |   in|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+(|in_stream_TDATA        |   in|   32|        axis|   in_stream_V_data_V|       pointer|) s
 5 318 M
-(|out_stream_TDEST       |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+(|in_stream_TVALID       |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
 5 310 M
-(|out_stream_TKEEP       |  out|    4|        axis|  out_stream_V_keep_V|       pointer|) s
+(|in_stream_TREADY       |  out|    1|        axis|   in_stream_V_dest_V|       pointer|) s
 5 302 M
-(|out_stream_TSTRB       |  out|    4|        axis|  out_stream_V_strb_V|       pointer|) s
+(|in_stream_TDEST        |   in|    1|        axis|   in_stream_V_dest_V|       pointer|) s
 5 294 M
-(|out_stream_TUSER       |  out|    1|        axis|  out_stream_V_user_V|       pointer|) s
+(|in_stream_TKEEP        |   in|    4|        axis|   in_stream_V_keep_V|       pointer|) s
 5 286 M
-(|out_stream_TLAST       |  out|    1|        axis|  out_stream_V_last_V|       pointer|) s
+(|in_stream_TSTRB        |   in|    4|        axis|   in_stream_V_strb_V|       pointer|) s
 5 278 M
-(|out_stream_TID         |  out|    1|        axis|    out_stream_V_id_V|       pointer|) s
+(|in_stream_TUSER        |   in|    1|        axis|   in_stream_V_user_V|       pointer|) s
 5 270 M
+(|in_stream_TLAST        |   in|    1|        axis|   in_stream_V_last_V|       pointer|) s
+5 262 M
+(|in_stream_TID          |   in|    1|        axis|     in_stream_V_id_V|       pointer|) s
+5 254 M
+(|out_stream_TDATA       |  out|   32|        axis|  out_stream_V_data_V|       pointer|) s
+5 246 M
+(|out_stream_TVALID      |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 238 M
+(|out_stream_TREADY      |   in|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 230 M
+(|out_stream_TDEST       |  out|    1|        axis|  out_stream_V_dest_V|       pointer|) s
+5 222 M
+(|out_stream_TKEEP       |  out|    4|        axis|  out_stream_V_keep_V|       pointer|) s
+5 214 M
+(|out_stream_TSTRB       |  out|    4|        axis|  out_stream_V_strb_V|       pointer|) s
+5 206 M
+(|out_stream_TUSER       |  out|    1|        axis|  out_stream_V_user_V|       pointer|) s
+5 198 M
+(|out_stream_TLAST       |  out|    1|        axis|  out_stream_V_last_V|       pointer|) s
+5 190 M
+(|out_stream_TID         |  out|    1|        axis|    out_stream_V_id_V|       pointer|) s
+5 182 M
 (+-----------------------+-----+-----+------------+---------------------+--------------+) s
 _R
 S

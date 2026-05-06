@@ -1,0 +1,2 @@
+dict set slaves control {ports {no_of_vectors {type i_ap_none width 32} row_size {type i_ap_none width 32} col_size {type i_ap_none width 32} A_0 {type i_ap_memory width 16} A_1 {type i_ap_memory width 16} A_2 {type i_ap_memory width 16} A_3 {type i_ap_memory width 16} ap_start {type ap_ctrl width 1} ap_done {type ap_ctrl width 1} ap_ready {type ap_ctrl width 1} ap_idle {type ap_ctrl width 1}} mems {A_0 {width 16} A_1 {width 16} A_2 {width 16} A_3 {width 16}} has_ctrl 1}
+set datawidth 32

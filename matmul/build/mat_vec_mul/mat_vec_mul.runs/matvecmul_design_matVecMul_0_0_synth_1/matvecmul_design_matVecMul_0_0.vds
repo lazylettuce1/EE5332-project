@@ -1,0 +1,403 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed May  6 06:13:50 2026
+# Process ID: 8610
+# Current directory: /home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1
+# Command line: vivado -log matvecmul_design_matVecMul_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source matvecmul_design_matVecMul_0_0.tcl
+# Log file: /home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/matvecmul_design_matVecMul_0_0.vds
+# Journal file: /home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script '/home/aion/.Xilinx/Vivado/Vivado_init.tcl'
+source matvecmul_design_matVecMul_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/aion/my_ws/ee5332/matmul/matmul_stream/matVecMul_stream_prj/solution_chocolate/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top matvecmul_design_matVecMul_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8723
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2548.344 ; gain = 0.000 ; free physical = 3117 ; free virtual = 14463
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'matvecmul_design_matVecMul_0_0' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_matVecMul_0_0/synth/matvecmul_design_matVecMul_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul.v:12]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_x_localbuff_V_0' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_x_localbuff_V_0.v:6]
+INFO: [Synth 8-3876] $readmem data file './matVecMul_x_localbuff_V_0.dat' is read successfully [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_x_localbuff_V_0.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_x_localbuff_V_0' (1#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_x_localbuff_V_0.v:6]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_matVecMul_Pipeline_sample_loop' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_matVecMul_Pipeline_sample_loop.v:10]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_flow_control_loop_pipe_sequential_init' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_flow_control_loop_pipe_sequential_init.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_flow_control_loop_pipe_sequential_init' (2#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_flow_control_loop_pipe_sequential_init.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_matVecMul_Pipeline_sample_loop' (3#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_matVecMul_Pipeline_sample_loop.v:10]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_matVecMul_Pipeline_matmul_inner_loop' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_matVecMul_Pipeline_matmul_inner_loop.v:10]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_mul_mul_16s_16s_32_4_1' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mul_mul_16s_16s_32_4_1.v:32]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mul_mul_16s_16s_32_4_1.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0' (4#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mul_mul_16s_16s_32_4_1.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_mul_mul_16s_16s_32_4_1' (5#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mul_mul_16s_16s_32_4_1.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_matVecMul_Pipeline_matmul_inner_loop' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_matVecMul_Pipeline_matmul_inner_loop.v:10]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_control_s_axi' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_control_s_axi.v:6]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_control_s_axi_ram' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_control_s_axi.v:759]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_control_s_axi_ram' (7#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_control_s_axi.v:759]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_control_s_axi.v:376]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_control_s_axi' (8#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_control_s_axi.v:6]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_mux_42_38_1_1' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mux_42_38_1_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_mux_42_38_1_1' (9#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_mux_42_38_1_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_regslice_both' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_regslice_both' (10#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_regslice_both__parameterized0' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_regslice_both__parameterized0' (10#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'matVecMul_regslice_both__parameterized1' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul_regslice_both__parameterized1' (10#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'matVecMul' (11#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/4a98/hdl/verilog/matVecMul.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'matvecmul_design_matVecMul_0_0' (12#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_matVecMul_0_0/synth/matvecmul_design_matVecMul_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2548.344 ; gain = 0.000 ; free physical = 3436 ; free virtual = 14783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2548.344 ; gain = 0.000 ; free physical = 3404 ; free virtual = 14752
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2548.344 ; gain = 0.000 ; free physical = 3404 ; free virtual = 14752
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2548.344 ; gain = 0.000 ; free physical = 4219 ; free virtual = 15562
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_matVecMul_0_0/constraints/matVecMul_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_matVecMul_0_0/constraints/matVecMul_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2612.348 ; gain = 0.000 ; free physical = 3334 ; free virtual = 14678
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2612.348 ; gain = 0.000 ; free physical = 3328 ; free virtual = 14671
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4167 ; free virtual = 15516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4167 ; free virtual = 15516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4166 ; free virtual = 15515
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4158 ; free virtual = 15508
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'inst/regslice_both_out_stream_V_keep_V_U' (matVecMul_regslice_both__parameterized0) to 'inst/regslice_both_out_stream_V_strb_V_U'
+INFO: [Synth 8-223] decloning instance 'inst/regslice_both_out_stream_V_user_V_U' (matVecMul_regslice_both__parameterized1) to 'inst/regslice_both_out_stream_V_id_V_U'
+INFO: [Synth 8-223] decloning instance 'inst/regslice_both_out_stream_V_user_V_U' (matVecMul_regslice_both__parameterized1) to 'inst/regslice_both_out_stream_V_dest_V_U'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   39 Bit       Adders := 4     
+	   2 Input   38 Bit       Adders := 4     
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input   31 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 15    
++---Registers : 
+	               38 Bit    Registers := 9     
+	               32 Bit    Registers := 29    
+	               31 Bit    Registers := 2     
+	               16 Bit    Registers := 9     
+	               14 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 17    
+	                1 Bit    Registers := 88    
++---RAMs : 
+	              16K Bit	(512 X 32 bit)          RAMs := 4     
+	              256 Bit	(16 X 16 bit)          RAMs := 4     
++---Muxes : 
+	   3 Input   38 Bit        Muxes := 4     
+	   2 Input   38 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 27    
+	   8 Input   32 Bit        Muxes := 1     
+	   3 Input   16 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 14    
+	   2 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 21    
+	   3 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 11    
+	   2 Input    1 Bit        Muxes := 43    
+	   5 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/b_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP mul_mul_16s_16s_32_4_1_U13/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: Generating DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/b_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP mul_mul_16s_16s_32_4_1_U16/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: Generating DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/b_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP mul_mul_16s_16s_32_4_1_U15/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: Generating DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/b_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/a_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: register mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp_reg is absorbed into DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+DSP Report: operator mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_tmp0 is absorbed into DSP mul_mul_16s_16s_32_4_1_U14/matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0_U/p_reg_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4130 ; free virtual = 15489
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | control_s_axi_U/int_A_0/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_1/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_2/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_3/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives     | 
++------------+---------------------------+-----------+----------------------+----------------+
+|inst        | x_localbuff_V_0_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_1_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_2_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_3_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
++------------+---------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below)
++-----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                              | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0 | (A2*B2)'    | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0 | (A2*B2)'    | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0 | (A2*B2)'    | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|matVecMul_mul_mul_16s_16s_32_4_1_DSP48_0 | (A2*B2)'    | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
++-----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 3866 ; free virtual = 15228
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4235 ; free virtual = 15590
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | control_s_axi_U/int_A_0/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_1/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_2/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|inst        | control_s_axi_U/int_A_3/mem_reg | 512 x 32(READ_FIRST)   | W | R | 512 x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+---------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives     | 
++------------+---------------------------+-----------+----------------------+----------------+
+|inst        | x_localbuff_V_0_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_1_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_2_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
+|inst        | x_localbuff_V_3_U/ram_reg | Implied   | 16 x 16              | RAM16X1S x 16  | 
++------------+---------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_0/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_0/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_1/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_1/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_2/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_2/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_3/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/control_s_axi_U/int_A_3/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4235 ; free virtual = 15590
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   171|
+|2     |DSP48E1  |     4|
+|3     |LUT1     |    51|
+|4     |LUT2     |   100|
+|5     |LUT3     |   478|
+|6     |LUT4     |   289|
+|7     |LUT5     |   127|
+|8     |LUT6     |   219|
+|9     |MUXF7    |     2|
+|10    |RAM16X1S |    64|
+|11    |RAMB36E1 |     4|
+|12    |FDRE     |  1018|
+|13    |FDSE     |    95|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4250 ; free virtual = 15605
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2612.348 ; gain = 0.000 ; free physical = 4297 ; free virtual = 15652
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2612.348 ; gain = 64.004 ; free physical = 4297 ; free virtual = 15652
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2612.348 ; gain = 0.000 ; free physical = 4387 ; free virtual = 15742
+INFO: [Netlist 29-17] Analyzing 245 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2612.348 ; gain = 0.000 ; free physical = 4379 ; free virtual = 15734
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM16X1S => RAM32X1S (RAMS32): 64 instances
+
+Synth Design complete, checksum: 5e1cd467
+INFO: [Common 17-83] Releasing license: Synthesis
+61 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:49 . Memory (MB): peak = 2612.348 ; gain = 64.031 ; free physical = 4492 ; free virtual = 15847
+INFO: [Common 17-1381] The checkpoint '/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/matvecmul_design_matVecMul_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP matvecmul_design_matVecMul_0_0, cache-ID = fb55d337c6ef8b17
+INFO: [Coretcl 2-1174] Renamed 24 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_matVecMul_0_0_synth_1/matvecmul_design_matVecMul_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file matvecmul_design_matVecMul_0_0_utilization_synth.rpt -pb matvecmul_design_matVecMul_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May  6 06:14:55 2026...

@@ -6,7 +6,7 @@
         <file name="../matVecMul.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions>
-        <solution name="solution3" status=""/>
+        <solution name="solution_chocolate" status=""/>
     </solutions>
 </AutoPilot:project>
 

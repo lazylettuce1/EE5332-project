@@ -41,15 +41,23 @@ matmul_stream/
     create_clock -period 10 -name default
     # Run Synthesis
     csynth_design
+    # Export the vivado IP
+    export_design -format ip_catalog -description "MatVecMul for Pynq" -display_name "matVecMul"
     exit
 
-`cat matmul_stream_prj/solution1/syn/report/matmul_stream_csynth.rpt` 
+`cat matVecMul_stream_prj/solution_multivec/syn/report/matVecMul_csynth.rpt` 
 to see the report.
 
 `enscript -r -f Courier7 -p report.ps matVecMul_stream_prj/solution2/syn/report/matVecMul_csynth.rpt && ps2pdf report.ps report.pdf`
 to get the pdf of the report
 
 ---
+
+`faketime '2021-01-01 00:00:00' /mnt/xilinx/Vitis_HLS/2021.1/bin/vitis_hls -f build.tcl`
+
+Required for Exporting the Vivado IP, for creating .hwh, and .bit files.
+
+
 
 
 

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Jan  1 00:00:18 2021
+# Process ID: 6928
+# Current directory: /home/aion/my_ws/ee5332/matmul/matmul_stream/matVecMul_stream_prj/solution_chocolate/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/aion/my_ws/ee5332/matmul/matmul_stream/matVecMul_stream_prj/solution_chocolate/impl/ip/vivado.log
+# Journal file: /home/aion/my_ws/ee5332/matmul/matmul_stream/matVecMul_stream_prj/solution_chocolate/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

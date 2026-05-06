@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed May  6 06:02:10 2026
+# Process ID: 6521
+# Current directory: /home/aion/my_ws/ee5332/matmul/matmul_stream
+# Command line: vivado -mode batch -source create_project.tcl
+# Log file: /home/aion/my_ws/ee5332/matmul/matmul_stream/vivado.log
+# Journal file: /home/aion/my_ws/ee5332/matmul/matmul_stream/vivado.jou
+#-----------------------------------------------------------
+source create_project.tcl

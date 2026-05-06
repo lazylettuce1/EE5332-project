@@ -1,0 +1,282 @@
+
+*** Running vivado
+    with args -log matvecmul_design_auto_us_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source matvecmul_design_auto_us_1.tcl
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script '/home/aion/.Xilinx/Vivado/Vivado_init.tcl'
+source matvecmul_design_auto_us_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/aion/my_ws/ee5332/matmul/matmul_stream/matVecMul_stream_prj/solution_chocolate/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top matvecmul_design_auto_us_1 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7872
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2535.344 ; gain = 0.000 ; free physical = 168 ; free virtual = 11337
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'matvecmul_design_auto_us_1' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_auto_us_1/synth/matvecmul_design_auto_us_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_24_top' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_24_axi_upsizer' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7038]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_24_w_upsizer' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:5563]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_24_w_upsizer' (1#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:5563]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_24_a_upsizer' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_command_fifo' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:655]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_command_fifo' (2#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:655]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_24_a_upsizer' (3#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axi_register_slice' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (4#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (5#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized0' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized0' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized1' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized1' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized2' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized2' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized3' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axic_register_slice__parameterized3' (6#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_24_axi_register_slice' (7#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/8f68/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_24_axi_register_slice' is unconnected for instance 'si_register_slice_inst' [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7379]
+WARNING: [Synth 8-7023] instance 'si_register_slice_inst' of module 'axi_register_slice_v2_1_24_axi_register_slice' has 93 connections declared, but only 92 given [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7379]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_24_axi_upsizer' (8#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7038]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_24_top' (9#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ipshared/3d13/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+INFO: [Synth 8-6155] done synthesizing module 'matvecmul_design_auto_us_1' (10#1) [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_auto_us_1/synth/matvecmul_design_auto_us_1.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2535.344 ; gain = 0.000 ; free physical = 3156 ; free virtual = 14350
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2535.344 ; gain = 0.000 ; free physical = 3217 ; free virtual = 14411
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2535.344 ; gain = 0.000 ; free physical = 3217 ; free virtual = 14411
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2535.344 ; gain = 0.000 ; free physical = 3195 ; free virtual = 14389
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_auto_us_1/matvecmul_design_auto_us_1_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.gen/sources_1/bd/matvecmul_design/ip/matvecmul_design_auto_us_1/matvecmul_design_auto_us_1_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_auto_us_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_auto_us_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2599.348 ; gain = 0.000 ; free physical = 3325 ; free virtual = 14532
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2599.348 ; gain = 0.000 ; free physical = 3325 ; free virtual = 14532
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3336 ; free virtual = 14569
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3336 ; free virtual = 14569
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_auto_us_1_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3336 ; free virtual = 14568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3277 ; free virtual = 14500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 2     
++---Registers : 
+	               62 Bit    Registers := 1     
+	               37 Bit    Registers := 2     
+	               36 Bit    Registers := 2     
+	               30 Bit    Registers := 1     
+	                8 Bit    Registers := 17    
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   2 Input   37 Bit        Muxes := 2     
+	   2 Input   36 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 19    
+	   8 Input    8 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 6     
+	   8 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 48    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3228 ; free virtual = 14456
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3228 ; free virtual = 14496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3204 ; free virtual = 14473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3204 ; free virtual = 14473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+-------------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                      | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+-------------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | USE_RTL_FIFO.data_srl_reg[31] | 30     | 30         | 0      | 30      | 0      | 0      | 0      | 
+|dsrl__1     | USE_RTL_FIFO.data_srl_reg[31] | 30     | 30         | 0      | 30      | 0      | 0      | 0      | 
++------------+-------------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |LUT1    |     2|
+|2     |LUT2    |    18|
+|3     |LUT3    |    14|
+|4     |LUT4    |    14|
+|5     |LUT5    |    39|
+|6     |LUT6    |   159|
+|7     |SRLC32E |    28|
+|8     |FDRE    |   263|
+|9     |FDSE    |     2|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3430 ; free virtual = 14695
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 2599.348 ; gain = 0.000 ; free physical = 3452 ; free virtual = 14717
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 2599.348 ; gain = 64.004 ; free physical = 3452 ; free virtual = 14717
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2599.348 ; gain = 0.000 ; free physical = 3544 ; free virtual = 14808
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2599.348 ; gain = 0.000 ; free physical = 3490 ; free virtual = 14755
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 87c2ab62
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:00:53 . Memory (MB): peak = 2599.348 ; gain = 64.031 ; free physical = 3569 ; free virtual = 14833
+INFO: [Common 17-1381] The checkpoint '/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_auto_us_1_synth_1/matvecmul_design_auto_us_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP matvecmul_design_auto_us_1, cache-ID = a521e047559cd042
+INFO: [Coretcl 2-1174] Renamed 7 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/aion/my_ws/ee5332/matmul/build/mat_vec_mul/mat_vec_mul.runs/matvecmul_design_auto_us_1_synth_1/matvecmul_design_auto_us_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file matvecmul_design_auto_us_1_utilization_synth.rpt -pb matvecmul_design_auto_us_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May  6 06:12:22 2026...

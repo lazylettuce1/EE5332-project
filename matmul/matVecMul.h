@@ -41,6 +41,7 @@ void matVecMul(
     data_t A[MAX_N][MAX_N],
     hls::stream<axis_pkt_t> &in_stream,
     hls::stream<axis_pkt_t> &out_stream,
+    int no_of_vectors,
     int row_size, int col_size
 );
 #endif

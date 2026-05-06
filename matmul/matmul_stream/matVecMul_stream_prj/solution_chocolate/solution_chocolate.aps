@@ -1,0 +1,25 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution_chocolate"/>
+    </name>
+    <project>
+        <value string="matVecMul_stream_prj"/>
+    </project>
+    <flowTarget value="vivado"/>
+    <targetInfo>
+        <TargetInfo value="xc7z020:-clg400:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="10" default="false"/>
+    </clockList>
+    <config>
+        <config_export description="MatVecMul for Pynq" display_name="matVecMul" format="ip_catalog"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="MatVecMul for Pynq" vendor="" library="" ipname="matVecMul" version="" display_name="matVecMul" taxonomy=""/>
+    </ExportDesign>
+</AutoPilot:solution>
+
