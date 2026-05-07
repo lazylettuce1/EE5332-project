@@ -6,13 +6,13 @@
 
 // typedef float data_t;
 // typedef float acc_t;
-typedef ap_fixed<16, 8, AP_RND, AP_SAT> data_t;
-typedef ap_fixed<38, 22, AP_RND, AP_SAT> acc_t;
+typedef ap_fixed<32, 16, AP_RND, AP_SAT> data_t;
+typedef ap_fixed<70, 38, AP_RND, AP_SAT> acc_t;
 // typedef ap_fixed<22, 14, AP_RND, AP_SAT> out_t;
 
 #define MAX_N 64
 #define USE_FIXED
-#define DATA_WIDTH 16
+#define DATA_WIDTH 32
 
 /* ---------- float <-> ap_int<32> conversion ---------- */
 union float_bits {

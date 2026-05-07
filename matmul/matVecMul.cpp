@@ -30,7 +30,7 @@ void matVecMul(
     // samples the stream data coming in,
     vector_loop:
     for (int i=0; i < no_of_vectors; i++){
-#pragma HLS LOOP_TRIPCOUNT min=1 max=2 // Adjust based on your testbench
+#pragma HLS LOOP_TRIPCOUNT min=1 max=20 // Adjust based on your testbench
         sample_loop:
         for (int j=0; j<col_size; j++) {
 #pragma HLS PIPELINE II=1
@@ -64,7 +64,9 @@ void matVecMul(
             out_pkt.user = 0;
             out_pkt.id   = 0;
             out_pkt.dest = 0;
-            out_pkt.last = (k == row_size - 1) ? 1 : 0;
+            // CRITICAL: TLAST should signal the end of the WHOLE batch for PYNQ
+            // If i is on the last vector AND k is on the last row
+            out_pkt.last = (i == no_of_vectors - 1 && k == row_size - 1) ? 1 : 0;
 
             out_stream.write(out_pkt);
         }
